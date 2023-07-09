@@ -1,0 +1,115 @@
+---
+import CompatibilityList from "./compatibility-list.astro";
+
+const frameworks1: Array<any> = [
+  {
+    title: "React",
+    icon: "fa-brands:react",
+    url: "https://reactjs.org/",
+  },
+  {
+    title: "Flutter",
+    icon: "vscode-icons:file-type-flutter",
+    url: "https://preactjs.com/",
+  },
+  {
+    title: "FastAPI",
+    icon: "simple-icons:fastapi",
+    url: "https://svelte.dev/",
+  },
+  {
+    title: "Astro",
+    icon: "simple-icons:astro",
+    url: "https://vuejs.org/",
+  },
+  {
+    title: "React Native",
+    icon: "tabler:brand-react-native",
+    url: "https://www.solidjs.com/",
+  },
+  {
+    title: "Next.js",
+    icon: "teenyicons:nextjs-outline",
+    url: "https://lit.dev/",
+  },
+];
+
+const frameworks2: Array<any> = [
+  {
+    title: "Laravel",
+    icon: "fa-brands:laravel",
+    url: "https://reactjs.org/",
+  },
+  {
+    title: "HTML",
+    icon: "icomoon-free:html-five",
+    url: "https://preactjs.com/",
+  },
+  {
+    title: "TypeScript",
+    icon: "simple-icons:typescript",
+    url: "https://svelte.dev/",
+  },
+  {
+    title: "Python",
+    icon: "fa-brands:python",
+    url: "https://vuejs.org/",
+  },
+  {
+    title: "Rust",
+    icon: "fa-brands:rust",
+    url: "https://www.solidjs.com/",
+  },
+  {
+    title: "Swift",
+    icon: "simple-icons:swift",
+    url: "https://lit.dev/",
+  },
+];
+
+const frameworks3: Array<any> = [
+  {
+    title: "Tailwind CSS",
+    icon: "simple-icons:tailwindcss",
+    url: "https://reactjs.org/",
+  },
+  {
+    title: "CSS",
+    icon: "simple-icons:css3",
+    url: "https://preactjs.com/",
+  },
+  {
+    title: "Dart",
+    icon: "simple-icons:dart",
+    url: "https://svelte.dev/",
+  },
+  {
+    title: "JavaScript",
+    icon: "simple-icons:javascript",
+    url: "https://vuejs.org/",
+  },
+];
+---
+<section
+  class="flex scroll-mt-24 flex-col items-center gap-4 space-y-8"
+>
+  <div class="flex flex-col items-center gap-4">
+    <slot name="eyebrow" />
+    <h2 class="gradient-text text-center font-extrabold tracking-tight text-6xl">あああ</h2>
+  </div>
+    <CompatibilityList
+      items={frameworks1}
+      title="Frameworks1"
+      url="https://docs.astro.build/core-concepts/framework-components/"
+    />
+    <CompatibilityList
+      items={frameworks2}
+      title="Frameworks2"
+      url="https://docs.astro.build/core-concepts/framework-components/"
+    />
+    <CompatibilityList
+      items={frameworks3}
+      title="Frameworks3"
+      url="https://docs.astro.build/core-concepts/framework-components/"
+    />
+</section>

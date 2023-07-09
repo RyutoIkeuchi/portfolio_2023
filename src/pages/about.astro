@@ -3,10 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
+import Skills from '../components/Skills.astro';
+import Combrality from '../components/combrality.astro';
 ---
 
 <BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
 	<div class="stack gap-20">
+		<Combrality/>
+
 		<main class="wrapper about">
 			<Hero
 				title="About"
@@ -56,7 +60,6 @@ import Hero from '../components/Hero.astro';
 				</div>
 			</section>
 		</main>
-
 		<ContactCTA />
 	</div>
 </BaseLayout>
