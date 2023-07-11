@@ -15,6 +15,11 @@ import PortfolioPreview from '../components/PortfolioPreview.astro';
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
+import BackendIcon from '../icons/BackendIcon.astro';
+import FrontendIcon from '../icons/FrontendIcon.astro';
+import MobileIcon from '../icons/MobileIcon.astro';
+import InfrastructureIcon  from '../icons/InfrastructureIcon.astro';
+import AiIotIcon from '../icons/AiIotIcon.astro';
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
@@ -31,17 +36,17 @@ const projects = (await getCollection('work'))
 			<header class="hero">
 				<Hero
 					title="Hello, my name is Ryuto Ikeuchi"
-					tagline="I am a Full Stack Developer who is currently based in Portland, Oregon."
+					tagline="I am currently a full-stack engineer working at Headwaters, Inc."
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" />Frontend Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" />Backend Developer</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" />Mobile Developer</Pill>
+						<Pill><FrontendIcon />Frontend</Pill>
+						<Pill><BackendIcon />Backend</Pill>
+						<Pill><MobileIcon />Mobile</Pill>
 					</div>
 					<div class="roles">
-						<Pill><Icon icon="pencil-line" size="1.33em" />AI Developer</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" />Iot Developer</Pill>
+						<Pill><AiIotIcon/>AI・IoT</Pill>
+						<Pill><InfrastructureIcon />Infrastructure</Pill>
 					</div>
 				</Hero>
 
