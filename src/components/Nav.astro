@@ -4,6 +4,7 @@ import ThemeToggle from './ThemeToggle.astro';
 import type { iconPaths } from './IconPaths';
 
 import { Icon as AsIcon } from "astro-icon";
+import TerminalWindow from '../icons/TerminalWindow.astro';
 
 
 /** Main menu items */
@@ -26,7 +27,7 @@ const iconLinks: { label: string; href: string; icon: string }[] = [
 <nav>
 	<div class="menu-header">
 		<a href="/" class="site-title">
-			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
+			<TerminalWindow color="var(--accent-regular)"/>
 			Ryuto Ikeuchi
 		</a>
 		<menu-button>
