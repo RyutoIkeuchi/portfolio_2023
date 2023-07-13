@@ -7,9 +7,11 @@ export interface Props {
 	color?: string;
 	gradient?: boolean;
 	size?: string;
+	isViewBox?: boolean;
+	isStroke?: boolean
 }
 
-const { color = 'currentcolor', gradient, icon, size } = Astro.props;
+const { color = 'currentcolor', gradient, icon, size, isViewBox=false, isStroke=true } = Astro.props;
 const iconPath = iconPaths[icon];
 
 const attrs: HTMLAttributes<'svg'> = {};
@@ -20,11 +22,11 @@ const gradientId = 'icon-gradient-' + Math.round(Math.random() * 10e12).toString
 
 <svg
 	xmlns="http://www.w3.org/2000/svg"
-	width="40"
-	height="40"
-	viewBox="0 0 256 256"
+	width={isViewBox ? "24" : "40"}
+	height={isViewBox ? "24" : "40"}
+	viewBox={isViewBox ? "0 0 24 24" : "0 0 256 256"}
 	aria-hidden="true"
-	stroke={gradient ? `url(#${gradientId})` : color}
+	stroke={isStroke ? gradient ? `url(#${gradientId})` : color : null}
 	fill={gradient ? `url(#${gradientId})` : color}
 	{...attrs}
 >

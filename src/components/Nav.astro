@@ -2,8 +2,6 @@
 import Icon from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import type { iconPaths } from './IconPaths';
-
-import { Icon as AsIcon } from "astro-icon";
 import TerminalWindow from '../icons/TerminalWindow.astro';
 
 
@@ -14,13 +12,12 @@ const textLinks: { label: string; href: string }[] = [
 	{ label: 'About', href: '/about/' },
 ];
 
-/** Icon links to social media — edit these with links to your profiles! */
-const iconLinks: { label: string; href: string; icon: string }[] = [
-	{ label: 'Twitter', href: 'https://twitter.com/me', icon: 'simple-icons:twitter' },
-	{ label: 'Qiita', href: 'https://twitch.tv/me', icon: 'simple-icons:qiita' },
-	{ label: 'GitHub', href: 'https://github.com/me', icon: 'simple-icons:github' },
-	{ label: 'Wantedly', href: 'https://codepen.io/me', icon: 'simple-icons:wantedly' },
-	{ label: 'Kaggle', href: 'https://www.kaggle.com/ryutoikeuchi', icon: 'simple-icons:kaggle' },
+const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths, isStroke: boolean }[] = [
+	{ label: 'Twitter', href: 'https://twitter.com/jokyo_engineer', icon: 'twitter', isStroke: true},
+	{ label: 'Qiita', href: 'https://qiita.com/flutter_daisuki', icon: 'qiita', isStroke: false },
+	{ label: 'GitHub', href: 'https://github.com/RyutoIkeuchi', icon: 'github', isStroke: true },
+	{ label: 'Wantedly', href: 'https://www.wantedly.com/id/ryuto_ikeuchi', icon: 'wantedly', isStroke: true },
+	{ label: 'Kaggle', href: 'https://www.kaggle.com/ryutoikeuchi', icon: 'kaggle', isStroke: false },
 ];
 ---
 
@@ -65,19 +62,11 @@ const iconLinks: { label: string; href: string; icon: string }[] = [
 		<div class="menu-footer">
 			<div class="socials">
 				{
-					iconLinks.map(({ href, icon, label }) => {
-						if (label === "Wantedly") {
-							return (
-								<a href={href} class="social">
-									<span class="sr-only">{label}</span>
-									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18.453 14.555c-.171-.111-.658-.764-2.006-3.982a9.192 9.192 0 0 0-.237-.526l-.274-.664l-2.362-5.702H8.85l2.362 5.702l2.362 5.706l2.181 5.267a.196.196 0 0 0 .362 0l2.373-5.682a.1.1 0 0 0-.037-.119zm-8.85 0c-.171-.111-.658-.764-2.006-3.982a8.971 8.971 0 0 0-.236-.525l-.276-.665l-2.36-5.702H0l2.362 5.702l2.362 5.706l2.181 5.267a.196.196 0 0 0 .362 0l2.374-5.682a.098.098 0 0 0-.038-.119ZM24 6.375a2.851 2.851 0 0 1-2.851 2.852a2.851 2.851 0 0 1-2.852-2.852a2.851 2.851 0 0 1 2.852-2.851A2.851 2.851 0 0 1 24 6.375Z"/></svg>
-								</a>
-							)
-						}
+					iconLinks.map(({ href, icon, label, isStroke }) => {
 						return (
 							<a href={href} class="social">
 								<span class="sr-only">{label}</span>
-								<AsIcon class="w-6" name={icon} />
+								<Icon icon={icon} isViewBox isStroke={isStroke} />
 							</a>
 						)
 					})
