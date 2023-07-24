@@ -100,11 +100,15 @@ const projects = (await getCollection('work'))
 				<div class="gallery">
 					<Grid variant="small">
 						{
-							['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
-								<li class="mention-card">
-									<p>{brand}</p>
-								</li>
-							))
+							['AI-102に合格', 'Tabe nateのメディア掲載', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => {
+								const bgImage = 'bg-ai-102'
+								return (
+									<li class="relative mention-card justify-center items-center text-center">
+										<div class={`${bgImage} bg-cover bg-center brightness-[.60] absolute top-0 left-0 w-full h-full border rounded-2xl z-[-100]`}></div>
+										<p class="text-white">{brand}</p>
+									</li>
+								)
+							})
 						}
 					</Grid>
 				</div>
@@ -240,14 +244,8 @@ const projects = (await getCollection('work'))
 	.mention-card {
 		display: flex;
 		height: 7rem;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
 		border: 1px solid var(--gray-800);
 		border-radius: 1.5rem;
-		color: var(--gray-300);
-		background: var(--gradient-subtle);
-		box-shadow: var(--shadow-sm);
 	}
 
 	@media (min-width: 50em) {
